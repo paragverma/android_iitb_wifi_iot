@@ -8,7 +8,9 @@
 
 ##### Link for Letter of Appreciation: [here!](https://drive.google.com/open?id=0BzdWD-VARIQxMnRIa2ZYN0MzR2NwUWQ3N2E5MEk2VUJxTEdn)
 
-##### Screenshots:
+##### Complete set of screenshots [here!](https://drive.google.com/drive/folders/0B-F_QUd1F6k5RGZiQWNOeUdZM1k?usp=sharing)
+
+##### Some Screenshots:
 
 ![Screenshot1](https://raw.githubusercontent.com/paragverma/paragverma.github.io/master/images/IITB_WIFI_1.png)
 
