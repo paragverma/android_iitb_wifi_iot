@@ -1,0 +1,179 @@
+//TODO: Remove this
+                wifiScanList = wifiManager.getScanResults();
+
+                Log.d("WIFI_Y", "Scan results method");
+                Log.d("WIFI_Y", wifiScanList.toString());
+
+                /*if(!wifiScanList.isEmpty()) {
+                    //String data = wifiScanList.get(0).toString();
+                    Log.d("WIFI_Y", wifiScanList.toString());
+                }*/
+
+                ssidlist = new ArrayList<String>();
+                HashMap<String, Integer> kvp = new HashMap<>();
+                HashMap<Integer, ScanResult> scankvp = new HashMap<>();
+                ScanResult rcv;
+                int i = 0;
+                int holdindex = 0;
+                String delog = "";
+                for (ScanResult s:
+                     wifiScanList) {
+
+                    //delog += " |" + s.SSID;
+                    if(s.SSID.toString().contains("saurabh")){
+
+                    }
+                    /*if(selectedWifi != null){
+
+                        // Yeh BSSID nay dikha
+                        if(kvp.get(s.BSSID) == null) {
+
+                            //if(wifiManager.getWifiState() == )
+                            if (TextUtils.equals(s.BSSID, wifiManager.getConnectionInfo().getBSSID())) {
+                                ssidlist.add("Connected<- " + s.SSID + " Strength: " + WifiManager.calculateSignalLevel(s.level, 100) +
+                                        " Type: " + wifiSec(wifitype(s.capabilities)));
+                            } else
+                                ssidlist.add(s.SSID + " Strength: " + WifiManager.calculateSignalLevel(s.level, 100) +
+                                        " Type: " + wifiSec(wifitype(s.capabilities)));
+                            kvp.put(s.BSSID, i);
+                            scankvp.put(i, s);
+                            i++;
+                        }
+
+                        //Yeh hashmap mein tha
+                        else{
+                            //hasmap se uska position nikal
+
+                            holdindex = kvp.get(s.BSSID);
+
+                            //Woh scanresult dusri
+                            rcv = scankvp.get(holdindex);
+
+                            if(WifiManager.calculateSignalLevel(s.level, 100) >
+                                    WifiManager.calculateSignalLevel(rcv.level, 100)){
+                                if (TextUtils.equals(s.BSSID, wifiManager.getConnectionInfo().getBSSID())) {
+                                    ssidlist.add("Connected<- " + s.SSID + " Strength: " + WifiManager.calculateSignalLevel(s.level, 100) +
+                                            " Type: " + wifiSec(wifitype(s.capabilities)));
+                                } else
+                                    ssidlist.add(s.SSID + " Strength: " + WifiManager.calculateSignalLevel(s.level, 100) +
+                                            " Type: " + wifiSec(wifitype(s.capabilities)));
+
+                                kvp.put(s.BSSID, holdindex);
+                                scankvp.put(holdindex, s);
+                            }
+                        }
+
+
+                    }
+                    /*else ssidlist.add(s.SSID + " Strength: " + WifiManager.calculateSignalLevel(s.level, 100) +
+                    " Type: " + wifiSec(wifitype(s.capabilities)));*/
+                }
+
+
+
+
+
+                ArrayList<ScanResult> mItems = new ArrayList<>();
+                ArrayList<String> StringmItems = new ArrayList<>();
+                List<ScanResult> results = wifiManager.getScanResults();
+                adapter = new ArrayAdapter(Home.this,
+                        android.R.layout.simple_list_item_1, StringmItems);
+
+                listView.setAdapter(adapter);
+
+                int size = results.size();
+
+                HashMap<String, Integer> signalStrength = new HashMap<String, Integer>();
+                try {
+                    for (i = 0; i < size; i++) {
+                        ScanResult result = results.get(i);
+
+                        if (!result.SSID.isEmpty()) {
+                            String key = result.SSID + " "
+                                    + result.capabilities;
+                            if (!signalStrength.containsKey(key)) {
+                                if(result.SSID.toString().contains("saurabh")){
+                                    Toast.makeText(getApplicationContext(), "saurabh first",
+                                            Toast.LENGTH_LONG).show();
+                                }
+                                signalStrength.put(key, i);
+                                mItems.add(result);
+                                if(TextUtils.equals(wifiManager.getConnectionInfo().getBSSID(), result.BSSID)){
+                                    StringmItems.add("Connected<- " + result.SSID + " |Strength: " + WifiManager.calculateSignalLevel(result.level, 100) + " Type: " + wifiSec(wifitype(result.capabilities)));
+                                }
+                                else StringmItems.add(result.SSID + " |Strength: " + WifiManager.calculateSignalLevel(result.level, 100) + " Type: " + wifiSec(wifitype(result.capabilities)));
+
+                                adapter.notifyDataSetChanged();
+                            } else {
+                                if(result.SSID.toString().contains("saurabh")){
+                                    Toast.makeText(getApplicationContext(), "saurabh not first",
+                                            Toast.LENGTH_LONG).show();
+                                }
+                                int position = signalStrength.get(key);
+                                ScanResult updateItem = mItems.get(position);
+                                if (WifiManager.calculateSignalLevel(updateItem.level, 100) >
+                                        WifiManager.calculateSignalLevel(result.level, 100)) {
+                                    mItems.set(position, updateItem);
+
+                                    if(TextUtils.equals(wifiManager.getConnectionInfo().getBSSID(), updateItem.BSSID)){
+                                        StringmItems.set(position, "Connected<- " + updateItem.SSID + " |Strength: " + WifiManager.calculateSignalLevel(updateItem.level, 100) + " Type: " + wifiSec(wifitype(updateItem.capabilities)));
+                                    }
+                                    else StringmItems.set(position, updateItem.SSID + " |Strength: " + WifiManager.calculateSignalLevel(updateItem.level, 100) + " Type: " + wifiSec(wifitype(updateItem.capabilities)));
+
+
+                                    adapter.notifyDataSetChanged();
+                                }
+                            }
+                        }
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                wifiScanList = mItems;
+
+
+
+                listView.setAdapter(adapter);
+                adapter.notifyDataSetChanged();
+
+
+
+
+
+
+ wifiScanList = wifiManager.getScanResults();
+                 Log.d("WIFI_Y", "Scan results method");
+                 //Log.d("WIFI_Y", wifiScanList.toString());
+
+                 if(!wifiScanList.isEmpty()) {
+                     //String data = wifiScanList.get(0).toString();
+                     Log.d("WIFI_Y", wifiScanList.toString());
+                 }
+                 ssidlist = new ArrayList<String>();
+                 for (ScanResult s:
+                         wifiScanList) {
+
+                     if(selectedWifi != null){
+
+                         //if(wifiManager.getWifiState() == )
+                         if(TextUtils.equals(s.BSSID, wifiManager.getConnectionInfo().getBSSID())){
+                             ssidlist.add("Connected<- " + s.SSID + " Strength: " + WifiManager.calculateSignalLevel(s.level, 100) +
+                                     " Type: " + wifiSec(wifitype(s.capabilities)));
+                         }
+
+                         else ssidlist.add(s.SSID + " Strength: " + WifiManager.calculateSignalLevel(s.level, 100) +
+                                 " Type: " + wifiSec(wifitype(s.capabilities)));
+
+
+                     }
+                     else ssidlist.add(s.SSID + " Strength: " + WifiManager.calculateSignalLevel(s.level, 100) +
+                             " Type: " + wifiSec(wifitype(s.capabilities)));
+                 }
+
+                 adapter = new ArrayAdapter(Home.this,
+                         android.R.layout.simple_list_item_1, ssidlist);
+
+
+                 listView.setAdapter(adapter);
+                 adapter.notifyDataSetChanged();

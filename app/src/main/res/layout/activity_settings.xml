@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.design.widget.CoordinatorLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="800dp"
+            tools:context="com.sds.paragverma.iitb_wifi.SettingsActivity">
+
+            <EditText
+                android:id="@+id/scanfreq"
+                android:layout_width="wrap_content"
+                android:hint="@string/scan_frequency"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:inputType="number"
+                android:layout_below="@+id/freqtv"
+                android:layout_alignParentStart="true" />
+
+            <Button
+                android:id="@+id/sfreq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="27dp"
+                android:text="Change"
+                android:layout_alignBottom="@+id/scanfreq"
+                android:layout_alignParentEnd="true" />
+
+            <Button
+                android:id="@+id/urlbt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Change"
+                android:layout_marginTop="30dp"
+                android:layout_below="@+id/sfreq"
+                android:layout_alignStart="@+id/sfreq" />
+
+            <Button
+                android:id="@+id/portbt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Change"
+                android:layout_alignBottom="@+id/porttxt"
+                android:layout_alignStart="@+id/urlbt" />
+
+            <EditText
+                android:id="@+id/urllink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text"
+                android:hint="@string/url_to_connect"
+                android:layout_alignBottom="@+id/urlbt"
+                android:layout_alignStart="@+id/scanfreq" />
+
+            <EditText
+                android:id="@+id/porttxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number"
+                android:hint="@string/port_number_to_connect"
+                android:layout_below="@+id/porttv"
+                android:layout_alignStart="@+id/porttv" />
+
+            <TextView
+                android:id="@+id/freqtv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:layout_alignParentTop="true"
+                android:layout_alignStart="@+id/scanfreq"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:id="@+id/urltv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/urllink"
+                android:layout_alignEnd="@+id/freqtv"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/porttv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:layout_below="@+id/urllink"
+                android:layout_alignStart="@+id/urllink"
+                android:layout_marginTop="19dp" />
+
+            <TextView
+                android:id="@+id/pltv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/porttxt"
+                android:layout_below="@+id/porttxt"
+                android:layout_marginTop="25dp"
+                android:text="TextView" />
+
+            <EditText
+                android:id="@+id/packetlength"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number"
+                android:hint="PacketLength"
+                android:layout_below="@+id/pltv"
+                android:layout_alignStart="@+id/pltv" />
+
+            <Button
+                android:id="@+id/packetlengthchange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/packetlength"
+                android:layout_alignEnd="@+id/portbt"
+                android:text="Change" />
+
+            <TextView
+                android:id="@+id/udptimestv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/packetlength"
+                android:layout_below="@+id/packetlength"
+                android:layout_marginTop="18dp"
+                android:text="TextView" />
+
+            <EditText
+                android:id="@+id/udptimes_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number"
+                android:hint="UDP Packets in 1 go"
+                android:layout_below="@+id/udptimestv"
+                android:layout_alignStart="@+id/udptimestv" />
+
+            <Button
+                android:id="@+id/udptimesbt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Change"
+                android:layout_alignBottom="@+id/udptimes_et"
+                android:layout_alignStart="@+id/packetlengthchange" />
+
+            <TextView
+                android:id="@+id/bindptv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/udptimes_et"
+                android:layout_below="@+id/udptimes_et"
+                android:layout_marginTop="11dp"
+                android:text="TextView" />
+
+            <EditText
+                android:id="@+id/bindpet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/udptimes_et"
+                android:layout_below="@+id/bindptv"
+                android:ems="10"
+                android:inputType="number"
+                android:hint="Bind Device to this port" />
+
+            <Button
+                android:id="@+id/bindpbt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Change"
+                android:layout_alignBottom="@+id/bindpet"
+                android:layout_alignStart="@+id/udptimesbt" />
+
+            <EditText
+                android:id="@+id/stet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/bindpet"
+                android:layout_below="@+id/bindpet"
+                android:layout_marginTop="33dp"
+                android:ems="10"
+                android:inputType="number"
+                android:hint="Socket Timeout" />
+
+            <TextView
+                android:id="@+id/sttv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/stet"
+                android:layout_below="@+id/bindpet"
+                android:layout_marginTop="19dp"
+                android:text="TextView" />
+
+            <Button
+                android:id="@+id/stbt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/stet"
+                android:layout_alignEnd="@+id/bindpbt"
+                android:text="Change" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</android.support.design.widget.CoordinatorLayout>
+
+
