@@ -4,9 +4,9 @@
 ###### Co Credits: Prof B.G Fernandez (HoD Electrical Engg, IIT Bombay)
 ###### Nimish Kothari (M.Tech Electrical Engg, IIT Bombay) and Jeet Panchal (B.Tech Electrical Engg, COEP)
 
-##### Link for APK: ![here](!https://drive.google.com/file/d/0B-F_QUd1F6k5cFdiRjVUYk9TekU/view) (Compiled for target Android 7.0.1). For later versions, please compile from source
+##### Link for APK: [here!](!https://drive.google.com/file/d/0B-F_QUd1F6k5cFdiRjVUYk9TekU/view) (Compiled for target Android 7.0.1). For later versions, please compile from source
 
-##### Link for Letter of Appreciation: ![here](https://drive.google.com/open?id=0BzdWD-VARIQxMnRIa2ZYN0MzR2NwUWQ3N2E5MEk2VUJxTEdn)
+##### Link for Letter of Appreciation: [here!](https://drive.google.com/open?id=0BzdWD-VARIQxMnRIa2ZYN0MzR2NwUWQ3N2E5MEk2VUJxTEdn)
 
 ##### Screenshots:
 
